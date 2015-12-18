@@ -1,0 +1,29 @@
+.myHeader {
+	width: 100%;
+	height: 80px;
+	box-sizing: border-box;
+	background: #3D3C3C;
+	color: #fff;
+	padding: 0 20px;
+}
+
+.myHeader h1{
+	float: left;
+	margin: 0;
+	padding: 10px 10px;
+}
+
+.myHeader div {
+	float: right;
+}
+
+.myHeader div p {
+	display: inline-block;
+	padding: 20px 10px;
+	margin: 0;
+}
+
+.myHeader div p:hover {
+	background: #737171;
+	cursor: pointer;
+}
