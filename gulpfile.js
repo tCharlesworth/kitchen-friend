@@ -22,15 +22,23 @@ gulp.task('copyHtml', function() {
 		.pipe(gulp.dest('build/'));
 });
 
-gulp.task('concatJs', function() {
-	console.log('*** concatinating javascript files');
+gulp.task('concatWWWJs', function() {
+	console.log('*** concatinating WWW javascript files');
 	return gulp
 		.src('./src/www/js/**/*.js')
 		.pipe(concat('all.js'))
 		.pipe(gulp.dest('build/www/js/'));
 });
 
+gulp.task('concatServerJs', function() {
+    console.log('*** concatinating Server javascript files');
+    return gulp
+        .src('./src/server/**/*.js')
+        // .pipe(concat('server.js'))
+        .pipe(gulp.dest('build/server/'));
+});
+
 //Build Task
-gulp.task('build',['concatJs', 'copyHtml', 'transpileSass'], function() {
+gulp.task('build',['concatWWWJs', 'copyHtml', 'transpileSass', 'concatServerJs'], function() {
 	console.log('*** Build Complete ***');
 });
