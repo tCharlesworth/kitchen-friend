@@ -12,7 +12,7 @@ gulp.task('transpileSass', function() {
 		.pipe(concat('styles.scss'))
 		.pipe(sass().on('error', sass.logError))
 		.pipe(prefix({browsers: ['last 2 version', '> 5%']}))
-		.pipe(gulp.dest('./build/www'))
+		.pipe(gulp.dest('./build/www/'))
 });
 
 gulp.task('copyHtml', function() {
@@ -35,7 +35,7 @@ gulp.task('concatServerJs', function() {
     return gulp
         .src('./src/server/**/*.js')
         // .pipe(concat('server.js'))
-        .pipe(gulp.dest('build/server/'));
+        .pipe(gulp.dest('build/'));
 });
 
 //Build Task

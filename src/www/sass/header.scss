@@ -1,18 +1,18 @@
-$background-color: blue;
-
 .myHeader {
 	width: 100%;
 	height: 80px;
 	box-sizing: border-box;
-	background: $background-color;
+	background: #3D3C3C;
 	color: #fff;
 	padding: 0 20px;
 }
 
 .myHeader h1{
 	float: left;
+    font-weight: bold;
+    font-size: 2em;
 	margin: 0;
-	padding: 10px 10px;
+	padding: 18px 10px;
 }
 
 .myHeader div {
@@ -21,7 +21,7 @@ $background-color: blue;
 
 .myHeader div p {
 	display: inline-block;
-	padding: 20px 10px;
+	padding: 30px 6px 28px 6px;
 	margin: 0;
 }
 

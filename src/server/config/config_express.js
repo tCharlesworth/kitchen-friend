@@ -7,7 +7,7 @@ module.exports = function(app, config) {
     /*************Middleware***************/
     app.use(bodyParser.json({limit: '50mb'}));
     app.use(session({secret: config.session_secret, resave: true, saveUninitialized: true}));
-    app.use(passport.session());
-    app.use(passport.initialize());
-    app.use(express.static(config.rootPath + '/www'));
+    // app.use(passport.session());
+    // app.use(passport.initialize());
+    app.use(express.static('www/'));
 }
