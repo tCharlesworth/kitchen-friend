@@ -4,6 +4,7 @@ var express = require('express'),
 
 require('./config/config_express')(app, config);
 require('./config/config_mongoose')(config);
+require('./config/config_passport')(app, config);
 require('./config/routes_web')(app);
 require('./config/routes_auth')(app);
 

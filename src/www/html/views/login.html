@@ -12,15 +12,18 @@
 				<input id='newEmail' type='email' ng-model="newUser.contactEmail" placeholder="email"/><br/>
 				<input id='newPword' type='password' ng-model="newUser.password" placeholder="password"/><br/>
 				<input id='confirmPword' type='password' ng-model="confirmPassword" placeholder="confirm password"/><br/>
-				<button class='login-button' ng-click="localSignup(newUser)">Sign Up</button>
+				<button class='login-button' type="submit">Sign Up</button>
 			</form>
+            <p>- Or -</p>
+            <button class='login-button' ng-click='googleSignup()'>Sign-up With Google</button>
 		</div>
 		<div class='loginBox' ng-show="!showSignUp">
 			<form ng-submit="localLogin(tryUser)">
 				<input id='loginUname' type='text' ng-model="tryUser.username" placeholder="username"/><br/>
 				<input id='loginPword' type='password' ng-model="tryUser.password" placeholder="password"/><br/>
-				<button class='login-button' ng-click="localLogin(tryUser)">Sign In</button>
+				<button class='login-button' type="submit">Sign In</button>
 			</form>
+            <button class='login-button' ng-click="googleLogin()">Login With Google</button>
 		</div>
 		<div class='stretch'><p></p></div>
 	</div>
