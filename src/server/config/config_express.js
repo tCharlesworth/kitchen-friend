@@ -9,5 +9,5 @@ module.exports = function(app, config) {
     app.use(session({secret: config.session_secret, resave: true, saveUninitialized: true}));
     // app.use(passport.session());
     // app.use(passport.initialize());
-    app.use(express.static('www/'));
+    app.use(express.static(__dirname + '/../www/'));
 }
