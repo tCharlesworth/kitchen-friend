@@ -61,10 +61,16 @@
 	border: none;
 	border-radius: 5px;
 	text-transform: none;
+    text-decoration: none;
 	width: 280px;
 	padding: 10px;
 	box-sizing: border-box;
 	margin: 10px;
+}
+
+.login-button a:visited {
+    text-decoration: none;
+    color: #fff;
 }
 
 .login-button:hover {
