@@ -6,7 +6,7 @@ var RecipeSchema = new Schema({
     description: {type: String},
     instructions: {type: [{type: String}], default: ''},
     ingredients: {type: [{type: String}], default: ''},
-    picture: {type: [{type: String}]}
+    picture: {type: String}
 });
 
 module.exports = mongoose.model('Recipe', RecipeSchema);
