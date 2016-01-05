@@ -12,7 +12,7 @@ module.exports = function(app) {
     // the process by verifying the assertion.  If valid, the user will be
     // logged in.  Otherwise, authentication has failed.
     app.get('/auth/google/callback',
-    Passport.authenticate('google', { failureRedirect: '/login' }), function(req, res) {
+    Passport.authenticate('google', { failureRedirect: '/#/login' }), function(req, res) {
         //Authentication Successful!
         console.log("Google Auth Successful");
         res.redirect('/#/home');
