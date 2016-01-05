@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 
 module.exports = {
     getRecipesByUserId: function(req, res) {
-        User.find({_id: req.user._id}).exec(function(err, result) {
+        User.find({_id: req.user._id}).populate('recipes').exec(function(err, result) {
             if(err) {
                 res.json({msg: err});
             } else {
