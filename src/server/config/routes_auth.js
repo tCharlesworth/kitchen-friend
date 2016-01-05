@@ -15,7 +15,7 @@ module.exports = function(app) {
     Passport.authenticate('google', { failureRedirect: '/login' }), function(req, res) {
         //Authentication Successful!
         console.log("Google Auth Successful");
-        res.json('YAAAY');
+        res.redirect('/#/home');
     });
     
     

@@ -1,12 +1,12 @@
 angular.module('kitchenFriend')
-.controller('loginCtrl', function($scope, authService) {
+.controller('loginCtrl', function($scope, $location, authService) {
     
 	$scope.localLogin = function(tryUser) {
         console.log('Logging in as: ', tryUser);
         authService.localLogin(tryUser).then(function(result) {
             if(result) {
                 //Redirect :)
-                console.log('Login Success');
+                $location.path('/home');
             }
         }).catch(function(err) {
             console.log('Login Error: ', err);
@@ -19,6 +19,7 @@ angular.module('kitchenFriend')
             if(result) {
                 //Created account successfully
                 console.log('Account Created');
+                //Auto login here?
             }
         }).catch(function(err) {
             console.log('Account not created');

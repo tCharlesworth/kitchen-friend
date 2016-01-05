@@ -7,7 +7,13 @@ angular.module('kitchenFriend', ['ui.router'])
 			url: '/login',
 			templateUrl: 'html/views/login.html',
 			controller: 'loginCtrl'
-		});
+		})
+        
+        .state('Home', {
+            url: '/home',
+            templateUrl: 'html/views/userHome.html',
+            controller: 'userHomeCtrl'
+        });
 	
-	$urlRouterProvider.otherwise('login');
+	$urlRouterProvider.otherwise('/login');
 });
