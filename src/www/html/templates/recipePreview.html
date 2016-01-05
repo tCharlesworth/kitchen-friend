@@ -1,9 +1,8 @@
 <div class="recipe-preview-container">
-    <div class="recipe-preview-background">
-        <img src="ddd.d" alt="Recipe Image">
-    </div>
-    <div class="recipe-preview-foreground">
-        <h3>Recipe Name</h3>
-        <p>Recipe Description</p>
+    <img ng-src="recipeData.image" alt="Recipe Image">
+    <div class="recipe-preview-color-layer"></div>
+    <div class="recipe-preview-content">
+        <h3>{{recipeData.name}}</h3>
+        <p>{{recipeData.description}}</p>
     </div>
 </div>

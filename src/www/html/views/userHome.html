@@ -1,2 +1,10 @@
-<h2>Home</h2>
-<hr class='almost-wide'/>
+<my-header></my-header>
+<h2>Home
+    <div class="view-options">
+        <i class="fa fa-th"></i>
+        <i class="fa fa-bars"></i>
+    </div>
+</h2>
+<div class="recipes-container">
+    <recipe-preview ng-repeat='recipe in recipes' recipe='recipe'></recipe-preview>
+</div>

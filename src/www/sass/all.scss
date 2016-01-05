@@ -4,6 +4,11 @@ body {
 	font-family: 'Open Sans';
 }
 
+.view-container {
+    width: 80%;
+    margin: auto;
+}
+
 input[type='text'], input[type='password'], input[type='email'] {
 	width: 280px;
 	margin: 10px;
@@ -17,4 +22,10 @@ input[type='text'], input[type='password'], input[type='email'] {
 
 .almost-wide {
     width: 75%;
+    float: left;
+}
+
+.half-wide {
+    width: 50%;
+    float: left;
 }
