@@ -13,6 +13,12 @@ angular.module('kitchenFriend', ['ui.router'])
             url: '/home',
             templateUrl: 'html/views/userHome.html',
             controller: 'userHomeCtrl'
+        })
+        
+        .state('Recipes', {
+           url: '/recipes',
+           templateUrl: 'html/views/userRecipes.html',
+           controller: 'userRecipesCtrl' 
         });
 	
 	$urlRouterProvider.otherwise('/login');

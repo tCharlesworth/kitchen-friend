@@ -29,3 +29,18 @@ input[type='text'], input[type='password'], input[type='email'] {
     width: 50%;
     float: left;
 }
+
+.section-title-container {
+    width: 75%;
+    float: left;
+    padding-left: 10%;
+    margin-left: 5%;
+    
+    .section-title {
+        margin-bottom: 0;
+    }
+    
+    hr {
+        color: red;
+    }
+}

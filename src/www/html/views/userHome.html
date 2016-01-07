@@ -1,10 +1,46 @@
 <my-header></my-header>
-<h2>Home
-    <div class="view-options">
-        <i class="fa fa-th"></i>
-        <i class="fa fa-bars"></i>
-    </div>
-</h2>
 <div class="recipes-container">
     <recipe-preview ng-repeat='recipe in recipes' recipe='recipe'></recipe-preview>
 </div>
+<div class="quick-menu-container">
+    <div class="quick-menu-option-container">
+        <img class='quick-menu-background-image' src="http://launchpad4kids.org/wp-content/uploads/edd/2014/05/cooking_lesson.jpg" alt=""/>
+        <div class="quick-menu-background-color red"></div>
+        <div class="quick-menu-content">
+            <p>Find a new Recipe</p>
+            <i class='fa fa-search'></i>
+        </div>
+    </div>
+    <div ui-sref="Recipes" class="quick-menu-option-container">
+        <img class='quick-menu-background-image' src="https://img.grouponcdn.com/deal/icza7DWi32ucZSxYfp1g/uK-5175x3105/v1/c700x420.jpg" alt=""/>
+        <div class="quick-menu-background-color green"></div>
+        <div class="quick-menu-content">
+            <p>View Saved Recipes</p>
+            <i class='fa fa-book'></i>
+        </div>
+    </div>
+    <div class="quick-menu-option-container">
+        <img class='quick-menu-background-image' src="https://pixabay.com/static/uploads/photo/2014/11/03/16/19/kitchen-515388_960_720.jpg" alt=""/>
+        <div class="quick-menu-background-color orange"></div>
+        <div class="quick-menu-content">
+            <p>Save A New Recipe</p>
+            <i class='fa fa-save'></i>
+        </div>
+    </div>
+    <div class="quick-menu-option-container">
+        <img class='quick-menu-background-image' src="http://www.hellawella.com/sites/hellawella.com/files/styles/default/public/images/eats/Eats_Cooking.jpg" alt=""/>
+        <div class="quick-menu-background-color blue"></div>
+        <div class="quick-menu-content">
+            <p>My Account</p>
+            <i class='fa fa-user'></i>
+        </div>
+    </div>    
+</div>
+<div class="section-title-container">
+    <h3 class='section-title'>Recent Recipes</h3>
+    <hr class="half-wide"/>
+</div>
+
+
+
+

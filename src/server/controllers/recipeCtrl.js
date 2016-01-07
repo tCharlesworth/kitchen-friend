@@ -4,11 +4,12 @@ var mongoose = require('mongoose'),
 
 module.exports = {
     getRecipesByUserId: function(req, res) {
+        console.log('Getting Recipes');
         User.find({_id: req.user._id}).populate('recipes').exec(function(err, result) {
             if(err) {
                 res.json({msg: err});
             } else {
-                console.log("Found: ", result);
+                console.log('Found: ', result);
                 res.json({recipes: result.recipes})
             }
         });

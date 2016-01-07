@@ -10,10 +10,10 @@ module.exports = function(app, config) {
         clientSecret: config.google_Oauth.Client_Secret,
         callbackURL: config.google_Oauth.callback
     }, function(accessToken, refreshToken, profile, done){
-        console.log('Google Returned: ', profile, accessToken, refreshToken);
+        console.log('Google gave the id of: ', profile.id);
 
         //See if the user exists (Profile ID)
-        User.findOne({auth: {google: profile.id}}).exec(function(findErr, theUser) {
+        User.findOne({'auth.google': profile.id}).exec(function(findErr, theUser) {
             if(findErr) {
                 return done(null, false, findErr);
             } else {

@@ -1,9 +1,11 @@
 angular.module('kitchenFriend')
 .service('recipeService', function($http) {
-    this.getRecipesByUserId = function(userId) {
+    this.getCurrentUsersRecipes = function() {
         return $http({
             method: 'GET',
-            url: '/recipes/'+userId
+            url: '/recipes'
+        }).then(function(response) {
+            return response.data;
         });
     }
 });
