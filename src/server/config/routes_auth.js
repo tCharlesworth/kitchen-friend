@@ -27,5 +27,6 @@ module.exports = function(app) {
         res.json('success');
     });
     
+    app.get('/auth/current', UserCtrl.isAuthenticated);
     app.get('/auth/logout', UserCtrl.logout);
 }

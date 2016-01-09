@@ -14,5 +14,19 @@ angular.module('kitchenFriend')
             url: '/auth/local',
             data: loginData
         });
-    }
+    };
+    
+    this.getAuth = function() {
+        return $http({
+            method: 'GET',
+            url: '/auth/current'
+        });
+    };
+    
+    this.logout = function() {
+        return $http({
+            method: 'GET',
+            url: '/auth/logout'
+        })
+    };
 });

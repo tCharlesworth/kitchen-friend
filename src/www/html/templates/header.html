@@ -1,9 +1,9 @@
 <nav class='myHeader'>
-	<h1 ui-sref='Login'>Kitchen Friend</h1>
+	<h1 ui-sref='Home'>Kitchen Friend</h1>
 	<div>
-		<p ng-show="loggedIn">My Recipes</p>
-		<p ng-show="loggedIn">Open Recipes</p>
-		<p ng-show="!loggedIn" ui-sref='Login'>Login</p>
-		<p ng-show="loggedIn">Logout</p>
+		<p ng-show="loggedIn" ui-sref="BrowseRecipes">Find Recipes</p>
+		<p ng-show="loggedIn" ui-sref="Recipes">Saved Recipes</p>
+		<p ng-show="!loggedIn" ui-sref="Login">Login</p>
+		<p ng-show="loggedIn" ng-click='logout()'>Logout</p>
 	</div>
 </nav>

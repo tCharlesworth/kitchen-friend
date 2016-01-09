@@ -3,7 +3,7 @@
     <recipe-preview ng-repeat='recipe in recipes' recipe='recipe'></recipe-preview>
 </div>
 <div class="quick-menu-container">
-    <div class="quick-menu-option-container">
+    <div ui-sref="BrowseRecipes" class="quick-menu-option-container">
         <img class='quick-menu-background-image' src="http://launchpad4kids.org/wp-content/uploads/edd/2014/05/cooking_lesson.jpg" alt=""/>
         <div class="quick-menu-background-color red"></div>
         <div class="quick-menu-content">
@@ -19,7 +19,7 @@
             <i class='fa fa-book'></i>
         </div>
     </div>
-    <div class="quick-menu-option-container">
+    <div ui-sref="NewRecipe" class="quick-menu-option-container">
         <img class='quick-menu-background-image' src="https://pixabay.com/static/uploads/photo/2014/11/03/16/19/kitchen-515388_960_720.jpg" alt=""/>
         <div class="quick-menu-background-color orange"></div>
         <div class="quick-menu-content">
@@ -27,7 +27,7 @@
             <i class='fa fa-save'></i>
         </div>
     </div>
-    <div class="quick-menu-option-container">
+    <div ui-sref="UserAccount" class="quick-menu-option-container">
         <img class='quick-menu-background-image' src="http://www.hellawella.com/sites/hellawella.com/files/styles/default/public/images/eats/Eats_Cooking.jpg" alt=""/>
         <div class="quick-menu-background-color blue"></div>
         <div class="quick-menu-content">
