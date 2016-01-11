@@ -1,5 +1,33 @@
-<div>
+<div class='new-user-recipe-container'>
     <h2>New User Recipe</h2>
     <input type="text" placeholder="name"/>
     <input type="text" placeholder="short description"/>
+    <div class="number-wrapper">
+        <input type="number" placeholder="prep time"/>
+        <input type="number" placeholder="cook time"/>
+    </div>
+    
+    <h3>Ingredients</h3>
+    <div class="item-container" ng-repeat="ingredient in newRecipe.ingredients track by $index"/>
+        <i class="cancel fa fa-ban"></i>
+        <input type="text" placeholder="ingredient" ng-model="newRecipe.ingredients[$index]">
+    </div>
+    <form class="hidden-input-container" ng-submit="addIngredient(newIngredient)">
+        <input class="hidden-input" type="text" ng-model="newIngredient" placeholder="new ingredient"/>
+        <button>Add</button>
+    </form>
+    
+    <h3>Directions</h3>
+    <div class="item-container" ng-repeat="ingredient in newRecipe.directions track by $index">
+        <i class="cancel fa fa-ban"></i>
+        <input type="text" placeholder="direction" ng-model="newRecipe.directions[$index]"/>
+    </div>
+    
+    <form class="hidden-input-container" ng-submit="addDirection(newDirection)">
+        <input class="hidden-input" type="text" ng-model="newDirection" placeholder="new direction"/>
+        <button>Add</button>
+    </form>
+    
+    
+    <button id="save-new-user-recipe-button" ng-click="saveRecipe()">Save Recipe</button>
 </div>

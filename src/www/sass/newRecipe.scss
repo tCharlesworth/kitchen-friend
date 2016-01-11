@@ -10,5 +10,68 @@
         h2 {
             text-align: center;
         }
-    }   
+    }
+    
+    .quick-menu-two-box:hover {
+        cursor: pointer;
+    }
+}
+
+.new-user-recipe-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    
+    .number-wrapper {
+        width: 80%;
+        margin: auto;
+        
+        input[type='number'] {
+            width: 45%;
+            margin: 0 2%;
+            display: inline-block;
+        }
+        
+    }
+    
+    .item-container {
+        
+        input {
+            width: calc(80% - 50px);
+            display: inline-block;
+        }
+        
+        .cancel {
+            font-size: 1.3em;
+        }
+    }
+    
+    .hidden-input-container {
+        
+        button {
+            width: 100px;
+            display: inline-block;
+            margin: 0;
+        }
+        
+        input[type='text'] {
+            width: calc(80% - 100px);
+            display: inline-block;
+        }
+    }
+}
+
+.hidden-input {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: thin solid #ddd;
+    color: gray;
+    display: inline-block;
+}
+
+.hidden-input:focus {
+    box-sizing: border-box;
+    border: thin solid #d3d3d3;
+    color: black;
+    outline: none;
 }

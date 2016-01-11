@@ -9,11 +9,13 @@ body {
     margin: auto;
 }
 
-input[type='text'], input[type='password'], input[type='email'] {
-	width: 280px;
-	margin: 10px;
+input[type='text'], input[type='password'], input[type='email'], input[type='number'] {
+	// width: 280px;
+    width: 80%;
+	margin: 10px auto;
 	padding: 5px;
 	box-sizing: border-box;
+    display: block;
 }
 
 .stretch {
@@ -51,4 +53,40 @@ input[type='text'], input[type='password'], input[type='email'] {
     hr {
         color: red;
     }
+}
+
+.circle {
+    border-radius: 50%;
+    border: thin solid lightgray;
+    padding: 3px;
+}
+
+.cancel:hover {
+    color: red;
+    border-color: red;
+    cursor: pointer;
+}
+
+
+button {
+	background: #0B9848;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	text-transform: none;
+    text-decoration: none;
+	width: 280px;
+	padding: 10px;
+	box-sizing: border-box;
+	margin: 10px;
+}
+
+button a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+button:hover {
+	background: #26AD61;
+	cursor: pointer;
 }
