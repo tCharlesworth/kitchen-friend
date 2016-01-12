@@ -1,3 +1,5 @@
-<my-header></my-header>
+<my-header force-auth="true"></my-header>
 
 <h1>User Recipes Go Here</h1>
+
+<recipe-preview ng-repeat="recipe in recipes track by $index" recipe="recipe"></recipe-preview>

@@ -4,13 +4,13 @@ var mongoose = require('mongoose'),
 
 module.exports = {
     getRecipesByUserId: function(req, res) {
-        console.log('Getting Recipes');
-        User.find({_id: req.user._id}).populate('recipes').exec(function(err, result) {
+        console.log('Getting Recipes for: ', req.user._id);
+        User.findOne({_id: req.user._id}).populate('recipes').exec(function(err, result) {
             if(err) {
                 res.json({msg: err});
             } else {
-                console.log('Found: ', result);
-                res.json({recipes: result.recipes})
+                console.log('Found: ', result.recipes);
+                res.json({recipes: result.recipes});
             }
         });
     },
@@ -32,7 +32,7 @@ module.exports = {
                         //Success. Return the new recipe
                         res.json({recipe: newRecipe});
                     }
-                })
+                });
             }
         });
     }

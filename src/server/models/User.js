@@ -11,7 +11,7 @@ var UserSchema = new Schema({
         },
         google: {type: String, default: ''}
     },
-    recipes: {type: [{type: Schema.Types.ObjectId}], ref: 'Recipe'}
+    recipes: {type: [{type: Schema.Types.ObjectId, ref: 'Recipe'}]}
 });
 
 module.exports = mongoose.model('User', UserSchema);
