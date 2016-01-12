@@ -3,7 +3,7 @@ angular.module('kitchenFriend')
     return {
         templateUrl: 'html/templates/recipePreview.html',
         scope: {
-            recipeData: '=recipe'
+            recipe: '='
         }
     };
 })

@@ -26,23 +26,42 @@
         width: 80%;
         margin: auto;
         
-        input[type='number'] {
-            width: 45%;
+        input[type='number'], p {
+            width: 15%;
             margin: 0 2%;
             display: inline-block;
+            text-align: left;
         }
         
     }
     
     .item-container {
+        margin-left: 10%;
+        margin-right: 0;
+        text-align: left;
         
         input {
             width: calc(80% - 50px);
             display: inline-block;
         }
         
+        i {
+            color: gray;
+        }
+        
+        i:hover {
+            color: green;
+            cursor: pointer;
+        }
+        
         .cancel {
             font-size: 1.3em;
+            color: gray;
+            cursor: pointer;
+        }
+        
+        .cancel:hover {
+            color: red;
         }
     }
     

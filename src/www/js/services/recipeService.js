@@ -4,8 +4,18 @@ angular.module('kitchenFriend')
         return $http({
             method: 'GET',
             url: '/recipes'
-        }).then(function(response) {
-            return response.data;
-        });
+        }).then(simpleReturn);
+    }
+    
+    this.saveNewRecipe = function(newRecipe) {
+        return $http({
+            method: 'POST',
+            url: '/recipes',
+            data: newRecipe
+        }).then(simpleReturn);
+    }
+    
+    var simpleReturn = function(response) {
+        return response.data;
     }
 });

@@ -27,6 +27,6 @@ angular.module('kitchenFriend')
         return $http({
             method: 'GET',
             url: '/auth/logout'
-        })
+        });
     };
 });

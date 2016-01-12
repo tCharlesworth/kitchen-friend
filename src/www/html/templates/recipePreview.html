@@ -1,8 +1,8 @@
 <div class="recipe-preview-container">
-    <img ng-src="recipeData.picture" alt="Recipe Image">
-    <div class="recipe-preview-color-layer"></div>
-    <div class="recipe-preview-content">
-        <h3>{{recipeData.name}}</h3>
-        <p>{{recipeData.description}}</p>
-    </div>
+    <img ng-src="recipe.picture" alt="Recipe Image">
+    <h3>{{recipe.name}}</h3>
+    <p>{{recipe.description}}</p>
+    <hr/>
+    Prep Time: {{recipe.prepTime}}
+    Cook Time: {{recipe.cookTime}}
 </div>
