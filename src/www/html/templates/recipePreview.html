@@ -1,8 +1,7 @@
 <div class="recipe-preview-container">
     <img ng-src="{{recipe.picture}}" alt="Recipe Image">
     <h3>{{recipe.name}}</h3>
-    <p>{{recipe.description}}</p>
     <hr/>
-    Prep Time: {{recipe.prepTime}}
-    Cook Time: {{recipe.cookTime}}
+    <i class="fa fa-clock-o"></i>&nbsp{{recipe.prepTime + recipe.cookTime || 0}}
+    &nbsp&nbsp<i class="fa fa-cutlery"></i>
 </div>
