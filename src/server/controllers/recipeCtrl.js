@@ -35,5 +35,15 @@ module.exports = {
                 });
             }
         });
+    },
+    
+    getRecipeById: function(req, res) {
+        Recipe.findOne({_id: req.params.recipeId}).exec(function(findErr, findResults) {
+            if(findErr) {
+                res.status(500).json(findErr);
+            } else {
+                res.json(findResults);
+            }
+        });
     }
 };

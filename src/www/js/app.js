@@ -37,6 +37,12 @@ angular.module('kitchenFriend', ['ui.router'])
             url: '/browse',
             templateUrl: 'html/views/browseRecipes.html',
             controller: 'browseRecipesCtrl'
+        })
+        
+        .state('Recipe', {
+            url: '/recipe/:recipeId',
+            templateUrl: 'html/views/recipe.html',
+            controller: 'recipeCtrl'
         });
 	
 	$urlRouterProvider.otherwise('/login');
