@@ -1,0 +1,44 @@
+<my-header></my-header>
+<p></p>
+<div class='new-user-recipe-container'>
+    <img ng-if="recipe.picture" ng-src="{{recipe.picture}}" alt="Recipe Picture"/>
+    <h2>Edit Recipe</h2>
+    <input type="text" placeholder="name" ng-model="recipe.name"/>
+    <input type="text" placeholder="short description" ng-model="recipe.description"/>
+    <input type="url" placeholder="picture (optional)" ng-model="recipe.picture">
+    <div class="number-wrapper">
+        <label>Prep Time:</label>
+        <input type="number" placeholder="prep time" ng-model="recipe.prepTime"/>
+        <label>Cook Time:</label>
+        <input type="number" placeholder="cook time" ng-model="recipe.cookTime"/>
+        <p>Total: {{recipe.prepTime + recipe.cookTime}}min</p>
+    </div>
+    
+    <h3>Ingredients</h3>
+    <div class="item-container" ng-repeat="ingredient in recipe.ingredients track by $index"/>
+        <i class="cancel fa fa-ban" ng-click="removeIngredient($index)"></i>
+        <input type="text" placeholder="ingredient" ng-model="recipe.ingredients[$index]"/>
+        <i ng-hide="$index === 0" class="fa fa-arrow-up" ng-click="orderIngredient($index, -1)"></i>
+        <i ng-hide="$index === recipe.ingredients.length-1" class="fa fa-arrow-down" ng-click="orderIngredient($index, 1)"></i>
+    </div>
+    <form class="hidden-input-container" ng-submit="addIngredient(newIngredient)">
+        <input class="hidden-input" type="text" ng-model="newIngredient" placeholder="new ingredient"/>
+        <button>Add</button>
+    </form>
+    
+    <h3>Directions</h3>
+    <div class="item-container" ng-repeat="ingredient in recipe.directions track by $index">
+        <i class="cancel fa fa-ban" ng-click="removeDirection($index)"></i>
+        <input type="text" placeholder="direction" ng-model="recipe.directions[$index]"/>
+        <i ng-hide="$index === 0" class="fa fa-arrow-up" ng-click="orderDirection($index, -1)"></i>
+        <i ng-hide="$index === recipe.directions.length-1" class="fa fa-arrow-down" ng-click="orderDirection($index, 1)"></i>
+    </div>
+    
+    <form class="hidden-input-container" ng-submit="addDirection(newDirection)">
+        <input class="hidden-input" type="text" ng-model="newDirection" placeholder="new direction"/>
+        <button>Add</button>
+    </form>
+    
+    
+    <button id="save-new-user-recipe-button" ng-click="saveChanges()">Save Changes</button>
+</div>

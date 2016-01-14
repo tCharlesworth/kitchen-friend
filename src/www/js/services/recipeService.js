@@ -19,7 +19,15 @@ angular.module('kitchenFriend')
         return $http({
             method: 'GET',
             url: '/recipe/'+recipeId
-        }).then(simpleReturn)
+        }).then(simpleReturn);
+    }
+    
+    this.updateRecipe = function(recipe) {
+        return $http({
+            method: 'PUT',
+            url: '/updateRecipe',
+            data: recipe
+        }).then(simpleReturn);
     }
     
     var simpleReturn = function(response) {

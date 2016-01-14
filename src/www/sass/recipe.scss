@@ -41,4 +41,30 @@
     .recipe-full-directions {
         padding-left: 40px;
     }
+    
+    .direction-number {
+        font-size: 25px;
+        color: gray;
+    }
+}
+
+.recipe-interactions-expanded-fixed {
+    font-size: 2em;
+    color: gray;
+    position: fixed;
+    top: 100px;
+    right: 10px;
+    border: 2px solid lightgray;
+    border-radius: 5px 0 0 5px;
+    padding: 10px;
+    
+    i {
+        display: block;
+        margin: 3px 0;
+    }
+    
+    i:hover {
+        color: black;
+        cursor: pointer;
+    }
 }

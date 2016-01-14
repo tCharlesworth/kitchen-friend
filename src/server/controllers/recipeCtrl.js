@@ -45,5 +45,15 @@ module.exports = {
                 res.json(findResults);
             }
         });
+    },
+    
+    updateRecipe: function(req, res) {
+        Recipe.findByIdAndUpdate(req.body._id, req.body, function(updErr, updResult) {
+            if(updErr) {
+                res.status(500).json(updErr);
+            } else {
+                res.json(updResult);
+            }
+        })
     }
 };
