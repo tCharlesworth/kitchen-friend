@@ -1,4 +1,4 @@
-angular.module('kitchenFriend').directive('recipeInteractions', function() {
+angular.module('kitchenFriend').directive('recipeInteractions', function(recipeService) {
     return {
         templateUrl: 'html/templates/recipeInteractions.html',
         scope: {
@@ -11,18 +11,24 @@ angular.module('kitchenFriend').directive('recipeInteractions', function() {
             };
             
             $scope.editRecipe = function() {
-                console.log('going: ', $scope.recipeId);
                 if($scope.recipeId) {
                     $state.go('RecipeEdit', {recipeId: $scope.recipeId});
                 }
             };
             
             $scope.shareRecipe = function() {
-                console.log('Sharing: ', $scope.recipeId);
                 if($scope.recipeId) {
                     $state.go('RecipeShare', {recipeId: $scope.recipeId});
                 }
-            }
+            };
+            
+            $scope.deleteRecipe = function() {
+                if($scope.recipeId) {
+                    recipeService.deleteRecipe($scope.recipeId).then(function(data) {
+                        $state.go('Recipes');
+                    });
+                }
+            };
         } 
     };
 });

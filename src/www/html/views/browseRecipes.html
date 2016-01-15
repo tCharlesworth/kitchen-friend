@@ -1,5 +1,9 @@
 <my-header></my-header>
 
-<h1>Browse Recipes Page</h1>
+<div class="page-title">
+    <h1>Popular Recipes</h1>
+    <hr class="half-wide"/>
+</div>
+<div class="stretch"></div>
 
-<recipe-preview ng-repeat="recipe in recipes" recipe="recipe"></recipe-preview>
+<recipe-preview ng-repeat="recipe in recipes" browse="true" recipe="recipe"></recipe-preview>

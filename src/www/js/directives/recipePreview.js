@@ -3,7 +3,8 @@ angular.module('kitchenFriend')
     return {
         templateUrl: 'html/templates/recipePreview.html',
         scope: {
-            recipe: '='
+            recipe: '=',
+            browse: '@'
         }
     };
 })

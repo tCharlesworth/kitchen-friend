@@ -13,14 +13,14 @@ angular.module('kitchenFriend')
             url: '/recipes',
             data: newRecipe
         }).then(simpleReturn);
-    }
+    };
     
     this.getRecipeById = function(recipeId) {
         return $http({
             method: 'GET',
             url: '/recipe/'+recipeId
         }).then(simpleReturn);
-    }
+    };
     
     this.updateRecipe = function(recipe) {
         return $http({
@@ -28,9 +28,16 @@ angular.module('kitchenFriend')
             url: '/updateRecipe',
             data: recipe
         }).then(simpleReturn);
-    }
+    };
+    
+    this.deleteRecipe = function(recipeId) {
+        return $http({
+            method: 'DELETE',
+            url: '/recipe/'+recipeId
+        }).then(simpleReturn);
+    };
     
     var simpleReturn = function(response) {
         return response.data;
-    }
+    };
 });

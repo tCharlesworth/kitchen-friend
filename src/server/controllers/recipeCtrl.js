@@ -55,5 +55,29 @@ module.exports = {
                 res.json(updResult);
             }
         })
+    },
+    
+    deleteRecipe: function(req, res) {
+        //Make sure recipe belongs to user
+        if(req.user.recipes.indexOf(req.params.recipeId) !== -1) {
+            //Delete From User
+            User.findByIdAndUpdate(req.user._id, {$pull: {recipes: req.params.recipeId}}, function(updErr, updResults) {
+                if(updErr) {
+                    res.status(500).json(updErr);
+                } else {
+                    //Delete from recipes database
+                    Recipe.findByIdAndRemove(req.params.recipeId, function(deleteErr, deleteResponse) {
+                        if(deleteErr) {
+                            res.status(500).json(deleteErr);
+                        } else {
+                            //Success.
+                            res.json(updResults);
+                        }
+                    });
+                }
+            })
+        } else {
+            res.status(403).send();
+        }
     }
 };
