@@ -92,6 +92,15 @@ button:hover {
 	cursor: pointer;
 }
 
+.disabled {
+    background-color: lightgray;
+}
+
+.disabled:hover {
+    background-color: lightgray;
+    color: red;
+}
+
 .page-title {
     margin-left: 20px;
     

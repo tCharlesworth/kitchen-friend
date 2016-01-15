@@ -1,4 +1,5 @@
-var recipeCtrl = require('../controllers/recipeCtrl');
+var recipeCtrl = require('../controllers/recipeCtrl'),
+    publicRecipeCtrl = require('../controllers/publicRecipeCtrl');
 
 module.exports = function(app) {
     /*****Endpoints*****/
@@ -6,7 +7,8 @@ module.exports = function(app) {
     
     app.get('/recipes', recipeCtrl.getRecipesByUserId);
     app.get('/recipe/:recipeId', recipeCtrl.getRecipeById);
+    app.get('/publicRecipes', publicRecipeCtrl.getPublicRecipes);
     
     app.post('/recipes', recipeCtrl.createNewRecipe);
-    
+    app.post('/share/public', publicRecipeCtrl.createPublicRecipe)
 }

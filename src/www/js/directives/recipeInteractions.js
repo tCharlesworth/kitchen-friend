@@ -16,6 +16,13 @@ angular.module('kitchenFriend').directive('recipeInteractions', function() {
                     $state.go('RecipeEdit', {recipeId: $scope.recipeId});
                 }
             };
+            
+            $scope.shareRecipe = function() {
+                console.log('Sharing: ', $scope.recipeId);
+                if($scope.recipeId) {
+                    $state.go('RecipeShare', {recipeId: $scope.recipeId});
+                }
+            }
         } 
     };
 });

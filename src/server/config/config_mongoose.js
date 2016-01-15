@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
     Recipe = require('../models/Recipe'),
+    PublicRecipe = require('../models/PublicRecipe'),
     User = require('../models/User'),
     mongoData = {};
     
