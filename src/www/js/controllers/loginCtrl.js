@@ -6,6 +6,7 @@ angular.module('kitchenFriend')
         authService.localLogin(tryUser).then(function(result) {
             if(result) {
                 //Redirect :)
+                console.log('redirecting');
                 $location.path('/home');
             }
         }).catch(function(err) {

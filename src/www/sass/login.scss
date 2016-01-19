@@ -1,7 +1,7 @@
 .loginBackground {
 	width: 100%;
-	height: calc( 100vh - 80px );
-	overflow: hidden;
+	min-height: calc( 100vh - 80px );
+	overflow-x: hidden;
 	background: url('http://static1.businessinsider.com/image/5591578369bedd085a94b910-1200/one-of-the-first-things-youll-notice-when-you-enter-food52s-office-is-a-long-white-walled-kitchen-where-in-house-chefs-try-out-recipes-to-be-posted-on-the-site-finding-a-building-that-would-allow-cooking-was-a-challenge-as-most-offices-dont-allow-gas-stoves-or-strong-food-smells-food52-uses-an-induction-stove-to-avoid-that.jpg');
 	background-size: cover;
 	background-position: center;
