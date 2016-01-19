@@ -29,10 +29,10 @@
 
 <div class='share-email-form' ng-show="currentView === 2">
     <h3>Share To Another Kitchen Friend User</h3>
-    <input class="share-email-one" type="text" placeholder="to (username)"/>
-    <textarea cols="30" rows="10" placeholder="message"></textarea>
-    <input class="share-email-two" type="text" placeholder="from">
-    <button>Send</button>
+    <input class="share-email-one" type="text" placeholder="to (username)" ng-model="shareUser.to"/>
+    <textarea cols="30" rows="10" placeholder="message" ng-model="shareUser.message"></textarea>
+    <input class="share-email-two" type="text" placeholder="from" ng-model="shareUser.from"/>
+    <button ng-click="shareRecipeWithUser(shareUser)">Send</button>
 </div>
 
 <div class="share-public-container" ng-show="currentView === 3">

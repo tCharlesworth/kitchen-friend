@@ -10,7 +10,8 @@ module.exports = function(app) {
     app.get('/publicRecipes', publicRecipeCtrl.getPublicRecipes);
     
     app.post('/recipes', recipeCtrl.createNewRecipe);
-    app.post('/share/public', publicRecipeCtrl.createPublicRecipe)
+    app.post('/share/public', publicRecipeCtrl.createPublicRecipe);
+    app.pose('/share/user', recipeCtrl.shareWithUser);
     
     app.delete('/recipe/:recipeId', recipeCtrl.deleteRecipe);
 }

@@ -14,4 +14,13 @@ angular.module('kitchenFriend').controller('recipeShareCtrl', function($scope, $
             });
         }
     };
+    
+    $scope.shareRecipeWithUser = function(shareInfo) {
+        shareInfo.recipeId = $stateParams.recipeId;
+        shareInfo.recipe = $scope.recipe;
+        recipeService.shareUser().then(function() {
+            //Redirect
+            $state.go('Home');
+        });
+    };
 });

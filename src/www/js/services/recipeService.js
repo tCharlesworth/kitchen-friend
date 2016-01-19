@@ -37,6 +37,14 @@ angular.module('kitchenFriend')
         }).then(simpleReturn);
     };
     
+    this.shareUser = function(recipeInfo) {
+        return $http({
+            method: 'POST',
+            url: '/share/user',
+            data: recipeInfo
+        }).then(simpleReturn);
+    };
+    
     var simpleReturn = function(response) {
         return response.data;
     };

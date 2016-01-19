@@ -79,5 +79,34 @@ module.exports = {
         } else {
             res.status(403).send();
         }
+    },
+    
+    shareWithUser: function(req, res) {
+        var recipeInfo = req.body;
+        //Verify to user exists
+        User.findOne({username: recipeInfo.to}, function(findErr, findResult) {
+            if(findErr) {
+                res.status(500).json(findErr);
+            } else if(findResult) {
+                //Create a duplicate of this recipe
+                Recipe.create(recipeInfo.recipe, function(createErr, newRecipe) {
+                    if(createErr) {
+                        res.status(500).json(createErr);
+                    } else {
+                        //Add it to the found user
+                        User.findByIdAndUpdate(findResult._id, {$push: {recipes: newRecipe._id}}, function(updateErr, updateResult) {
+                            if(updateErr) {
+                                res.status(500).json(updateErr);
+                            } else {
+                                res.json(newRecipe);
+                            }
+                        });
+                    }
+                });
+            } else {
+                //That user does not exist
+                res.status(403).json({message: 'User does not exist'});
+            }
+        });
     }
 };
