@@ -11,7 +11,8 @@ module.exports = function(app) {
     
     app.post('/recipes', recipeCtrl.createNewRecipe);
     app.post('/share/public', publicRecipeCtrl.createPublicRecipe);
-    app.pose('/share/user', recipeCtrl.shareWithUser);
+    app.post('/share/user', recipeCtrl.shareWithUser);
+    app.post('/share/email', recipeCtrl.shareWithEmail);
     
     app.delete('/recipe/:recipeId', recipeCtrl.deleteRecipe);
 }

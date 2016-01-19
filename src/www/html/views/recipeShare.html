@@ -21,10 +21,10 @@
 
 <div class='share-email-form' ng-show="currentView === 1">
     <h3>Share Via Email</h3>
-    <input class="share-email-one" type="email" placeholder="to (email)"/>
-    <textarea cols="30" rows="10" placeholder="message"></textarea>
-    <input class="share-email-two" type="text" placeholder="from">
-    <button>Send</button>
+    <input class="share-email-one" type="email" placeholder="to (email)" ng-model="shareEmail.to"/>
+    <textarea cols="30" rows="10" placeholder="message" ng-model="shareEmail.message"></textarea>
+    <input class="share-email-two" type="text" placeholder="from" ng-model="shareEmail.from">
+    <button ng-click="shareWithEmail(shareEmail)">Send</button>
 </div>
 
 <div class='share-email-form' ng-show="currentView === 2">

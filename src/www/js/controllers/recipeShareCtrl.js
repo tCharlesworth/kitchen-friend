@@ -23,4 +23,11 @@ angular.module('kitchenFriend').controller('recipeShareCtrl', function($scope, $
             $state.go('Home');
         });
     };
+    
+    $scope.shareWithEmail = function(shareInfo) {
+        shareInfo.recipe = $scope.recipe;
+        recipeService.shareEmail().then(function() {
+            $state.go('Home');
+        });
+    };
 });

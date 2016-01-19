@@ -108,5 +108,15 @@ module.exports = {
                 res.status(403).json({message: 'User does not exist'});
             }
         });
+    },
+    
+    shareWithEmail: function(req, res) {
+        
+        
+        
+        
+        
+        
+        res.send();
     }
 };
