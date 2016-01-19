@@ -8,7 +8,7 @@
         <input type="number" placeholder="prep time" ng-model="newRecipe.prepTime"/>
         <label>Cook Time:</label>
         <input type="number" placeholder="cook time" ng-model="newRecipe.cookTime"/>
-        <p>Total: {{newRecipe.prepTime + newRecipe.cookTime}}min</p>
+        <p>Total: {{newRecipe.prepTime + newRecipe.cookTime || 0}}min</p>
     </div>
     
     <h3>Ingredients</h3>

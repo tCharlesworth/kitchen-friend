@@ -1,11 +1,17 @@
 <my-header force-auth="true"></my-header>
-
+<p></p>
 <div class="quick-menu-two" ng-hide="showOptions">
-    <div class="quick-menu-two-box left" ng-click="showNewUserRecipe=true;showNewLinkRecipe=false;showOptions=true;">
-        <h2>Add Your Own Recipe</h2>
+    <div class="quick-menu-two-box left new-r-box-left" ng-click="showNewUserRecipe=true;showNewLinkRecipe=false;showOptions=true;">
+        <div class="new-r-box-left-color"></div>
+        <div class="new-r-box-content">
+            <h2>Add Your Own Recipe</h2>
+        </div>
     </div>
-    <div class="quick-menu-two-box right" ng-click="showNewLinkRecipe=true;showNewUserRecipe=false;showOptions=true;">
-        <h2>Add From A Link</h2>
+    <div class="quick-menu-two-box right new-r-box-right" ng-click="showNewLinkRecipe=true;showNewUserRecipe=false;showOptions=true;">
+        <div class="new-r-box-right-color"></div>
+        <div class="new-r-box-content">
+            <h2>Add From A Link</h2>
+        </div>
     </div>
     <div class="stretch"></div>
 </div>

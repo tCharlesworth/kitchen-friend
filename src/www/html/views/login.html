@@ -15,7 +15,7 @@
 				<button class='login-button' type="submit">Sign Up</button>
 			</form>
             <p> - Or - </p>
-            <button class='login-button' ng-click='googleSignup()'>Sign-up With Google</button>
+            <a href="/auth/google"><button class='login-button'>Login With Google</button></a>
 		</div>
 		<div class='loginBox' ng-show="!showSignUp">
 			<form ng-submit="localLogin(tryUser)">
@@ -23,7 +23,7 @@
 				<input id='loginPword' type='password' ng-model="tryUser.password" placeholder="password"/><br/>
 				<button class='login-button' type="submit">Sign In</button>
 			</form>
-            <button class='login-button'><a href="/auth/google">Login With Google</a></button>
+            <a href="/auth/google"><button class='login-button'>Login With Google</button></a>
 		</div>
 		<div class='stretch'><p></p></div>
 	</div>
