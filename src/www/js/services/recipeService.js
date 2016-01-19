@@ -51,7 +51,7 @@ angular.module('kitchenFriend')
             url: '/share/email',
             data: recipeInfo
         }).then(simpleReturn);
-    }
+    };
     
     var simpleReturn = function(response) {
         return response.data;
