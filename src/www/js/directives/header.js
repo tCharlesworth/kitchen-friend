@@ -20,8 +20,9 @@ angular.module('kitchenFriend')
             });
             
             $scope.logout = function() {
-                authService.logout();
-                $state.go('Login');
+                authService.logout().then(function(response) {
+                    $state.go('Login');
+                });
             };
             
 		}
