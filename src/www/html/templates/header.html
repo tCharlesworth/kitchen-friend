@@ -1,6 +1,7 @@
 <nav class='myHeader'>
 	<h1 ui-sref='Home'>Kitchen Friend</h1>
 	<div>
+		<p ng-show="loggedIn" ui-sref="Home">Home</p>
 		<p ng-show="loggedIn" ui-sref="BrowseRecipes">Find Recipes</p>
 		<p ng-show="loggedIn" ui-sref="Recipes">Saved Recipes</p>
 		<p ng-show="!loggedIn" ui-sref="Login">Login</p>

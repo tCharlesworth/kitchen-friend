@@ -1,4 +1,4 @@
-<my-header></my-header>
+<my-header force-auth="true"></my-header>
 <div class="recipes-container">
     <recipe-preview ng-repeat='recipe in recipes' recipe='recipe'></recipe-preview>
 </div>
@@ -37,10 +37,13 @@
     </div>    
 </div>
 <div class="section-title-container">
-    <h3 class='section-title'>Recent Recipes</h3>
+    <h3 class='section-title'>Recipe Mail</h3>
     <hr class="half-wide"/>
 </div>
-
+<div class="stretch"></div>
+<div class="view-container">
+    <recipe-mail ng-repeat="mail in allMail track by $index" mail='mail' delete='deleteFunction()'></recipe-mail>
+</div>
 
 
 

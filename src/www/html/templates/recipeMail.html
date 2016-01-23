@@ -1,0 +1,10 @@
+<div class="mail-container">
+    <recipe-preview class="right" recipe="mail.recipeId"></recipe-preview>
+    <h3>{{mail.sender}}</h3>
+    <p>{{mail.message}}</p>
+    <div class="mail-bottom">
+        <button ng-click="acceptMail(mail.recipeId._id)">Accept</button>
+        <button ng-click="rejectMail(mail.recipeId._id)">Reject</button>
+    </div>
+    <div class="stretch"></div>
+</div>

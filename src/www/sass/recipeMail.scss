@@ -1,0 +1,16 @@
+recipe-mail {
+    position: relative;
+    
+    .mail-container {
+        width: 80%;
+        padding: 20px;
+        border: thin solid lightgray;
+        border-radius: 5px;
+    }
+    
+    .mail-bottom {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+    }
+}
