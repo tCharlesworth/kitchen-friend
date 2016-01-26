@@ -23,11 +23,17 @@ angular.module('kitchenFriend').directive('recipeInteractions', function(recipeS
             };
             
             $scope.deleteRecipe = function() {
-                if($scope.recipeId) {
-                    recipeService.deleteRecipe($scope.recipeId).then(function(data) {
-                        $state.go('Recipes');
-                    });
+                if(window.confirm('Are you sure you want to delete this recipe?')) {
+                    if($scope.recipeId) {
+                        recipeService.deleteRecipe($scope.recipeId).then(function(data) {
+                            $state.go('Recipes');
+                        });
+                    }
                 }
+            };
+            
+            $scope.printRecipe = function() {
+                alert('Not Finished Yet');
             };
         } 
     };

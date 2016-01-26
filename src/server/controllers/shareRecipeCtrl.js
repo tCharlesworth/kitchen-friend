@@ -51,9 +51,8 @@ module.exports = {
     acceptShare: function(req, res) {
         console.log('****ACCEPTING THE SHARE****');
         console.log('Req Params: ', req.params);
-        // res.send();
         //Remove from my mail list
-        User.findOne({_id: req.user._id}).update({$pull: {'recipeShares': {$in: req.params.id}}}).exec(function(findErr, findRes) {
+        User.findOne({_id: req.user._id}).update({$pull: {'recipeShares': {'recipeId': req.params.id}}}).exec(function(findErr, findRes) {
             if(findErr) {
                 res.status(500).json(findErr);
             } else {
@@ -99,6 +98,13 @@ module.exports = {
     },
     
     rejectShare: function(req, res) {
-        
+        //Switch recipe shares and pull?
+        User.findOne({_id: req.user._id}).update({'recipeShares': {$pull: {$contains: req.params.id}}}).exec(function(findErr, findRes) {
+            if(findErr) {
+                res.status(500).json(findErr);
+            } else {
+                res.json(findRes);
+            }
+        });
     }
 };

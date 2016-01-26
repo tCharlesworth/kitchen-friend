@@ -4,5 +4,6 @@ angular.module('kitchenFriend').controller('recipeCtrl', function($scope, $state
     recipeService.getRecipeById($stateParams.recipeId).then(function(data) {
         $scope.recipe = data;
         $scope.isLoading = false;
+        console.log('GOT RECIPE: ', data);
     });
 });

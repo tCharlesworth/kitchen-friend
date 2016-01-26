@@ -10,14 +10,17 @@ angular.module('kitchenFriend').directive('recipeMail', function() {
             console.log('MESSAGE: ', $scope.message);
             $scope.acceptMail = function(recipeId) {
                 shareService.acceptShare(recipeId).then(function() {
-                    console.log('refresh needed');
-                    $state.go('Home');
+                    console.log('refresh needed: ', recipeId);
+                    $scope.deleteFunction({'recipeId': recipeId});
                 });
             };
             
             $scope.rejectMail = function(recipeId) {
+                console.log('REJECTING');
                 shareService.rejectShare(recipeId).then(function(data) {
-                    $state.go('Home');
+                    console.log('refresh Needed from rejecting: ', data);
+                    
+                    $scope.deleteFunction({'recipeId': recipeId});
                 });
             };
         }

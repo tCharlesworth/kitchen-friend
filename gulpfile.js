@@ -38,6 +38,11 @@ gulp.task('concatServerJs', function() {
         .pipe(gulp.dest('build/'));
 });
 
+//Watch Tasks
+gulp.task('Watch', function() {
+    gulp.watch(['./src/**/*'], ['build']);
+});
+
 //Build Task
 gulp.task('build',['concatWWWJs', 'copyHtml', 'transpileSass', 'concatServerJs'], function() {
 	console.log('*** Build Complete ***');
