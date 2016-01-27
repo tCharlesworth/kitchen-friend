@@ -1,0 +1,56 @@
+<my-header force-auth="true"></my-header>
+<p></p>
+<div class="option-container" ng-show="currentView === 0">
+    <div class="share-option left" ng-click="currentView = 1">
+        <h3>Share Via Email</h3>
+    </div>
+    <div class="share-option right" ng-click="currentView = 3">
+        <h3>Share To Our Public Recipes</h3>
+    </div>
+    <div class="share-option middle" ng-click="currentView = 2">
+        <h3>Share With Another Kitchen Friend User</h3>
+    </div>
+    <div class="stretch"></div>
+</div>
+
+<div class="share-option-quick-container" ng-show="currentView != 0">
+    <div class='left' ng-click="currentView = 1" ng-class="{'selected-box': currentView === 1}">Email</div>
+    <div class='right' ng-click="currentView = 3" ng-class="{'selected-box': currentView === 3}">Public</div>
+    <div class='middle' ng-click="currentView = 2" ng-class="{'selected-box': currentView === 2}">Another User</div>
+</div>
+
+<div class='share-email-form' ng-show="currentView === 1">
+    <h3>Share Via Email</h3>
+    <input class="share-email-one" type="email" placeholder="to (email)" ng-model="shareEmail.to"/>
+    <textarea cols="30" rows="10" placeholder="message" ng-model="shareEmail.message"></textarea>
+    <input class="share-email-two" type="text" placeholder="from" ng-model="shareEmail.from">
+    <button ng-click="shareWithEmail(shareEmail)">Send</button>
+</div>
+
+<div class='share-email-form' ng-show="currentView === 2">
+    <h3>Share To Another Kitchen Friend User</h3>
+    <input class="share-email-one" type="text" placeholder="to (username)" ng-model="shareUser.to"/>
+    <textarea cols="30" rows="10" placeholder="message" ng-model="shareUser.message"></textarea>
+    <input class="share-email-two" type="text" placeholder="from" ng-model="shareUser.from"/>
+    <button ng-click="shareRecipeWithUser(shareUser)">Send</button>
+</div>
+
+<div class="share-public-container" ng-show="currentView === 3">
+    <h3>Share Public</h3>
+    <recipe-preview recipe="recipe" browse="true"></recipe-preview>
+    <div class="quick-form">
+        Terms of Use
+        <p>
+            We can share this information. You have permission 
+            to share this information. We will not be held liable 
+            for any lawsuits regarding this information. You 
+            will not sue us. Legal fees are your responsibility.
+            Terms can update at any time.
+        </p>
+    </div>
+    
+    <input type="checkbox" ng-model="termsCheck"/>
+    Agree to Terms <br/>
+    <button ng-click="shareRecipePublic()" ng-class='{disabled: !termsCheck}'>Share</button>
+    <div class="stretch"></div>
+</div>
