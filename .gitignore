@@ -1,3 +1,5 @@
 .vscode
+src
+node_modules
 config.js
 src\server\config.js
