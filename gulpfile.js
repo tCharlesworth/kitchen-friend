@@ -2,7 +2,9 @@
 var gulp =   require('gulp'),
 	concat = require('gulp-concat'),
 	sass =   require('gulp-sass'),
-	prefix = require('gulp-autoprefixer');
+	prefix = require('gulp-autoprefixer'),
+    uglify = require('gulp-uglify'),
+    annotate = require('gulp-ng-annotate');
 
 //Tasks
 gulp.task('transpileSass', function() {
@@ -26,7 +28,9 @@ gulp.task('concatWWWJs', function() {
 	console.log('*** concatinating WWW javascript files');
 	return gulp
 		.src('./src/www/js/**/*.js')
+        .pipe(annotate())
 		.pipe(concat('all.js'))
+        .pipe(uglify())
 		.pipe(gulp.dest('build/www/js/'));
 });
 

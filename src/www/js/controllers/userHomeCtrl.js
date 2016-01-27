@@ -7,13 +7,10 @@ angular.module('kitchenFriend')
     });
     
     $scope.deleteFunction = function(recipeId) {
-        console.log('runing delete for: ', recipeId);
         for(var i = 0; i < $scope.allMail.length; i++) {
             if( $scope.allMail[i].recipeId._id === recipeId) {
-                console.log('SPLICE: ', i);
                 $scope.allMail.splice(i, 1);
             }
         }
-        console.log('Done Deleting')
     };
 });

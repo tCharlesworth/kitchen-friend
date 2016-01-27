@@ -8,7 +8,7 @@ angular.module('kitchenFriend')
     this.getPublicRecipes = function() {
         return $http({
             method: 'GET',
-            url: 'publicRecipes'
+            url: '/publicRecipes'
         }).then(simpleReturn);
     };
     
@@ -17,6 +17,13 @@ angular.module('kitchenFriend')
             method: 'POST',
             url: '/share/public',
             data: recipe
+        }).then(simpleReturn);
+    };
+    
+    this.getPublicRecipeById = function(recipeId) {
+        return $http({
+            method: 'GET',
+            url: '/publicRecipes/'+recipeId
         }).then(simpleReturn);
     };
 });

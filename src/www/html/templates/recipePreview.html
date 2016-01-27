@@ -1,6 +1,6 @@
 <div class="recipe-preview-container">
-    <img ng-src="{{recipe.picture}}" alt="Recipe Image" ui-sref="Recipe({recipeId: recipe._id})">
-    <h3 ui-sref="Recipe({recipeId: recipe._id})">{{recipe.name}}</h3>
+    <img ng-src="{{recipe.picture}}" alt="Recipe Image" ng-click="openRecipe()">
+    <h3 ng-click="openRecipe()">{{recipe.name}}</h3>
     <hr/>
     <p ng-if="browse">{{recipe.description}}</p>
     <h4 ng-if="browse">{{recipe.author}}</h4>

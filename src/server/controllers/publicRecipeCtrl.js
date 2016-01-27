@@ -25,5 +25,15 @@ module.exports = {
                 res.json(results);
             }
         });
+    },
+    
+    getRecipeById: function(req, res) {
+        PublicRecipe.findById(req.params.recipeId, function(findErr, findResult) {
+            if(findErr) {
+                res.status(500).json(findErr);
+            } else {
+                res.json(findResult);
+            }
+        });
     }
 };
