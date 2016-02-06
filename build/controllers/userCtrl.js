@@ -3,10 +3,12 @@ var Mongoose    = require('mongoose'),
 
 module.exports = {
     createLocalUser: function(req, res) {
+        console.log('creating: ', req.body);
         var newUser = req.body;
         //Make sure the username does not already exist
         User.findOne({username: newUser.username}).exec(function(findErr, theUser) {
             if(findErr) {
+                console.log('FAILING 1');
                 res.status(500).send(findErr);
             } else {
                 if(theUser) {
@@ -17,12 +19,15 @@ module.exports = {
                     //We can create
                     newUser.auth = {
                         local: {
-                            email: newUser.contactEmail,
+                            email: req.body.email,
                             password: newUser.password
                         }
-                    }
+                    };
+                    newUser.contactEmail = req.body.email
+                    console.log('newUser: ', newUser);
                     User.create(newUser, function(createErr, theNewUser) {
                         if(createErr) {
+                            console.log('FAILING 2', createErr);
                             res.status(500).send(createErr);
                         } else {
                             //Send them back the new user

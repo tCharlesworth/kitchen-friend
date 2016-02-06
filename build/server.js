@@ -7,6 +7,7 @@ require('./config/config_mongoose')(config);
 require('./config/config_passport')(app, config);
 require('./config/routes_web')(app);
 require('./config/routes_auth')(app);
+require('./config/routes_mobile')(app);
 
 app.listen(config.port, function (err) {
     if (err) {
