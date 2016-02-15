@@ -55,23 +55,30 @@ input[type='text'], input[type='password'], input[type='email'], input[type='num
   cursor: pointer; }
 
 button {
-  background: #0B9848;
+  background: #4C4C4C;
   color: #fff;
   border: none;
+  box-sizing: border-box;
   border-radius: 5px;
   text-transform: none;
   text-decoration: none;
   width: 280px;
   padding: 10px;
   box-sizing: border-box;
-  margin: 10px; }
+  margin: 10px;
+  -webkit-transition: background-color 0.7s ease;
+  transition: background-color 0.7s ease;
+  -webkit-transition: color 0.7s ease;
+  transition: color 0.7s ease; }
 
 button a:visited {
   text-decoration: none;
   color: #fff; }
 
 button:hover {
-  background: #26AD61;
+  background: #AFAEAE;
+  color: black;
+  border: thin solid #008517;
   cursor: pointer; }
 
 .disabled {
@@ -90,7 +97,7 @@ button:hover {
   width: 100%;
   height: 80px;
   box-sizing: border-box;
-  background: #3D3C3C;
+  background: #008517;
   color: #fff;
   padding: 0 20px; }
 
@@ -113,7 +120,7 @@ button:hover {
   margin: 0; }
 
 .myHeader div p:hover {
-  background: #737171;
+  background: #2EB445;
   cursor: pointer; }
 
 .loginBackground {
@@ -140,7 +147,8 @@ button:hover {
 .loginButtons {
   width: 100%;
   margin-top: 60px;
-  color: #fff; }
+  color: #fff;
+  background-color: #008517; }
 
 .loginButtons div a {
   color: #fff; }
@@ -191,13 +199,19 @@ button:hover {
     background-size: cover;
     background-position: center; }
     .quick-menu-two .new-r-box-left .new-r-box-left-color {
-      background-color: dodgerblue;
+      background-color: #4C4C4C;
       opacity: 0.8;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      -webkit-transition: background-color 0.8s ease;
+      transition: background-color 0.8s ease; }
+  .quick-menu-two .quick-menu-two-box:hover .new-r-box-right-color {
+    background-color: dodgerblue; }
+  .quick-menu-two .quick-menu-two-box:hover .new-r-box-left-color {
+    background-color: #008517; }
   .quick-menu-two .new-r-box-content {
     position: absolute;
     top: 0;
@@ -212,18 +226,21 @@ button:hover {
     background-size: cover;
     background-position: center; }
     .quick-menu-two .new-r-box-right .new-r-box-right-color {
-      background-color: lime;
+      background-color: #4C4C4C;
       opacity: 0.8;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      -webkit-transition: background-color 0.8s ease;
+      transition: background-color 0.8s ease; }
 
 .new-user-recipe-container {
   width: 80%;
   margin: auto;
-  text-align: center; }
+  text-align: center;
+  border: thin solid #008517; }
   .new-user-recipe-container img {
     max-width: 100%;
     max-height: 300px;
@@ -283,6 +300,14 @@ button:hover {
   max-width: 800px;
   background: #fff;
   margin: auto; }
+  .recipe-full-container hr {
+    border: none;
+    height: 1px;
+    background: -webkit-linear-gradient(left, #008517, transparent);
+    background: linear-gradient(to right, #008517, transparent);
+    width: 80%;
+    margin: 0 0;
+    margin-bottom: 10px; }
   .recipe-full-container h2 {
     text-transform: uppercase; }
   .recipe-full-container img {
@@ -291,7 +316,7 @@ button:hover {
   .recipe-full-container .left-side {
     width: 50%;
     float: left;
-    border-right: thin solid lightgray;
+    border-right: thin solid #008517;
     box-sizing: border-box;
     padding: 20px; }
   .recipe-full-container .right-side {
@@ -303,7 +328,7 @@ button:hover {
     margin: 3px 0;
     padding-left: 10px;
     margin-left: 5%px;
-    border-left: thin solid gray;
+    border-left: thin solid #008517;
     width: 35%;
     display: inline-block;
     box-sizing: border-box; }
@@ -311,7 +336,7 @@ button:hover {
     padding-left: 40px; }
   .recipe-full-container .direction-number {
     font-size: 25px;
-    color: gray; }
+    color: #008517; }
 
 .recipe-interactions-expanded-fixed {
   font-size: 2em;
@@ -319,7 +344,7 @@ button:hover {
   position: fixed;
   top: 100px;
   right: 10px;
-  border: 2px solid lightgray;
+  border: 2px solid #008517;
   border-radius: 5px 0 0 5px;
   padding: 10px; }
   .recipe-interactions-expanded-fixed i {
@@ -360,7 +385,7 @@ recipe-mail {
   width: 80%;
   min-width: 400px;
   padding: 20px;
-  border: thin solid lightgray;
+  border: thin solid #008517;
   border-radius: 5px;
   margin: 20px auto; }
   .share-email-form .share-email-one {
@@ -384,7 +409,7 @@ recipe-mail {
     text-align: center;
     padding: 3px 0; }
   .share-option-quick-container div:hover {
-    outline: thin solid gray;
+    outline: thin solid #008517;
     cursor: pointer; }
   .share-option-quick-container .middle {
     margin: auto;
@@ -397,7 +422,7 @@ recipe-mail {
   width: 80%;
   min-width: 400px;
   padding: 20px;
-  border: thin solid lightgray;
+  border: thin solid #008517;
   border-radius: 5px;
   margin: 20px auto; }
   .share-public-container recipe-preview {
@@ -406,12 +431,27 @@ recipe-mail {
   .share-public-container .quick-form {
     width: calc( 100% - 220px); }
 
+.quick-menu-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 20px; }
+
 .quick-menu-option-container {
-  width: 25%;
-  height: 400px;
-  float: left;
+  min-width: 250px;
+  height: 300px;
+  display: inline-block;
   box-sizing: border-box;
-  position: relative; }
+  position: relative;
+  border: thin solid gray;
+  margin-top: 20px; }
 
 .quick-menu-option-container:hover {
   cursor: pointer; }
@@ -426,12 +466,16 @@ recipe-mail {
   z-index: 0; }
 
 .quick-menu-background-color {
+  background-color: #4C4C4C;
+  -webkit-transition: background 0.7s ease;
+  transition: background 0.7s ease;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1; }
+  z-index: 1;
+  opacity: 0.8; }
 
 .quick-menu-content {
   position: absolute;
@@ -446,31 +490,27 @@ recipe-mail {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 2em;
-    margin-top: 30%; }
+    margin-top: 20%; }
   .quick-menu-content i {
     font-size: 4em; }
 
-.red {
-  background: red;
-  opacity: 0.8; }
+.quick-menu-option-container:hover .red {
+  background: red; }
 
-.blue {
-  background: blue;
-  opacity: 0.8; }
+.quick-menu-option-container:hover .blue {
+  background: blue; }
 
-.green {
-  background: green;
-  opacity: 0.8; }
+.quick-menu-option-container:hover .green {
+  background: green; }
 
-.orange {
-  background: orange;
-  opacity: 0.8; }
+.quick-menu-option-container:hover .orange {
+  background: orange; }
 
 .recipe-list-wrapper {
   padding: 0 30px; }
 
 .recipe-preview-container {
-  border: thin solid #e6e6e6;
+  border: thin solid #00FD2C;
   padding: 8px;
   width: 200px;
   box-shadow: 0 0 6px 0 gray;
@@ -488,3 +528,10 @@ recipe-mail {
     cursor: pointer; }
   .recipe-preview-container h4 {
     margin: 0; }
+  .recipe-preview-container hr {
+    border: none;
+    height: 1px;
+    background: -webkit-linear-gradient(left, #4C4C4C, transparent);
+    background: linear-gradient(to right, #4C4C4C, transparent);
+    width: 80%;
+    margin: 5px 0; }
