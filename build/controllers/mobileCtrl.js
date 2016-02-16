@@ -5,12 +5,12 @@ var Mongoose = require('mongoose'),
 module.exports = {
     checkLoginLocal: function (req, res) {
         console.log('checking', req.body.email);
-        User.findOne({ 'auth.local.email': req.body.email }).populate('recipes').exec(function (findErr, findResult) {
+        User.findOne({ 'contactEmail': req.body.email }).populate('recipes').exec(function (findErr, findResult) {
             if (findErr) {
                 return res.status(500).json(findErr);
             } else if (findResult) {
                 // Check Password
-                if (findResult.auth.local.password === req.body.password) {
+                if (findResult.comparePassword(req.body.password)) {
                     delete findResult.auth;
                     res.json(findResult);
                 } else {
