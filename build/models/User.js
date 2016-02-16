@@ -16,7 +16,8 @@ var UserSchema = new Schema({
         sender: {type: String},
         message: {type: String},
         recipeId: {type: Schema.Types.ObjectId, ref: 'Recipe'}
-    }]
+    }],
+    createdOn: {type: Date, default: Date.now()}
 });
 
 UserSchema.methods.hashPassword = function(password) {
@@ -26,8 +27,5 @@ UserSchema.methods.hashPassword = function(password) {
 UserSchema.methods.comparePassword = function(password) {
     return BCrypt.compareSync(password, this.auth.local);
 };
-
-
-
 
 module.exports = mongoose.model('User', UserSchema);
