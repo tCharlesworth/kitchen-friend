@@ -78,7 +78,6 @@ button a:visited {
 button:hover {
   background: #AFAEAE;
   color: black;
-  border: thin solid #008517;
   cursor: pointer; }
 
 .disabled {
