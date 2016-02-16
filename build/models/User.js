@@ -1,14 +1,14 @@
 var mongoose = require('mongoose'),
-    Schema =   mongoose.Schema;
+    Schema =   mongoose.Schema,
+    BCrypt =    require('bcryptjs');
+
+var salt = BCrypt.genSaltSync(10);
 
 var UserSchema = new Schema({
     username: {type: String, required: true, unique: true},
     contactEmail: {type: String, unique: true},
     auth: {
-        local: {
-            email: {type: String, default: ''},
-            password: {type: String, default: ''}
-        },
+        local: {type: String, default: ''},
         google: {type: String, default: ''}
     },
     recipes: {type: [{type: Schema.Types.ObjectId, ref: 'Recipe'}]},
@@ -18,5 +18,16 @@ var UserSchema = new Schema({
         recipeId: {type: Schema.Types.ObjectId, ref: 'Recipe'}
     }]
 });
+
+UserSchema.methods.hashPassword = function(password) {
+    return BCrypt.hashSync(password, salt);
+};
+
+UserSchema.methods.comparePassword = function(password) {
+    return BCrypt.compareSync(password, this.auth.local);
+};
+
+
+
 
 module.exports = mongoose.model('User', UserSchema);

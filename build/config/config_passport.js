@@ -45,13 +45,13 @@ module.exports = function(app, config) {
     
     //Local Authentication
     Passport.use(new Local_Strategy(function(email, password, done) {
-        User.findOne({'auth.local.email': email}).exec(function(findErr, theUser) {
+        User.findOne({'contactEmail': email}).exec(function(findErr, theUser) {
             if(findErr) {
                 return done(null, false, findErr);
             } else {
                 if(theUser) {
                     //Found their email. Check Password Match
-                    if(theUser.auth.local.password === password) {
+                    if(theUser.comparePassword(password)) {
                         console.log('Welcome Back, ', theUser.username);
                         return done(null, theUser);
                     } else {
@@ -69,8 +69,8 @@ module.exports = function(app, config) {
     //Serialization
     Passport.serializeUser(function(user, done) {
         done(null, user);
-    })
+    });
     Passport.deserializeUser(function(obj, done) {
         done(null, obj);
-    })
+    });
 };

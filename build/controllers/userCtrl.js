@@ -17,22 +17,21 @@ module.exports = {
                     res.status(400).json('Username already exists.');
                 } else {
                     //We can create
-                    newUser.auth = {
-                        local: {
-                            email: req.body.email,
-                            password: newUser.password
-                        }
+                    var realUser = new User();
+                    realUser.username = newUser.username;
+                    realUser.auth = {
+                        local: realUser.hashPassword(req.body.password)
                     };
-                    newUser.contactEmail = req.body.email
-                    console.log('newUser: ', newUser);
-                    User.create(newUser, function(createErr, theNewUser) {
+                    realUser.contactEmail = req.body.contactEmail;
+                    console.log('realUser: ', realUser);
+                    realUser.save(function(createErr) {
                         if(createErr) {
                             console.log('FAILING 2', createErr);
                             res.status(500).send(createErr);
                         } else {
                             //Send them back the new user
                             console.log('New user created successfully');
-                            res.json(theNewUser);
+                            res.json(realUser);
                         }
                     });
                 }
