@@ -8,7 +8,8 @@ module.exports = function (app, config) {
     Passport.use(new Google_Strategy({
         clientID: config.google_Oauth.Client_Id,
         clientSecret: config.google_Oauth.Client_Secret,
-        callbackURL: config.google_Oauth.callback
+        callbackURL: config.google_Oauth.callback,
+        scope: 'email'
     }, function (accessToken, refreshToken, profile, done) {
         console.log('Google gave the id of: ', profile.id);
 
