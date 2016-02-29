@@ -4,8 +4,8 @@ var MobileCtrl = require('../controllers/mobileCtrl'),
     
 module.exports = function(app) {
     
-    app.options('/mobile/login', cors());
-    app.post('/mobile/login', cors(), MobileCtrl.checkLoginLocal);
+    app.options('/mobile/login', cors(), tester);
+    app.post('/mobile/login', cors(), tester, MobileCtrl.checkLoginLocal);
     
     app.options('/mobile/recipes/:userId', cors());
     app.post('/mobile/recipes/:userId', cors(), MobileCtrl.addUserRecipe);
@@ -15,3 +15,12 @@ module.exports = function(app) {
     app.options('/mobile/auth/register', cors());
     app.post('/mobile/auth/register', cors(), UserCtrl.createLocalUser);
 };
+
+var tester = function(req, res, next) {
+    console.log('mobile endpoint running');
+    if(next) {
+        next();
+    } else {
+        res.send();
+    }
+}

@@ -17,7 +17,8 @@ var UserSchema = new Schema({
         message: {type: String},
         recipeId: {type: Schema.Types.ObjectId, ref: 'Recipe'}
     }],
-    createdOn: {type: Date, default: Date.now()}
+    createdOn: {type: Date, default: Date.now()},
+    shoppingList: {type: [{type: String}], default: []}
 });
 
 UserSchema.methods.hashPassword = function(password) {
