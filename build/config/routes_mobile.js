@@ -1,5 +1,6 @@
 var MobileCtrl = require('../controllers/mobileCtrl'),
     cors = require('cors'),
+    passport = require('passport'),
     UserCtrl = require('../controllers/userCtrl');
     
 module.exports = function(app) {
@@ -14,6 +15,13 @@ module.exports = function(app) {
     
     app.options('/mobile/auth/register', cors());
     app.post('/mobile/auth/register', cors(), UserCtrl.createLocalUser);
+    
+    
+    app.options('/mobile/googleLogin', cors());
+    app.get('/mobile/googleLogin', cors(), passport.authenticate('google', {
+        failureRedirect: 'http://localhost/failureCallback',
+        successRedirect: 'http://localhost/successCallback'
+    }));
 };
 
 var tester = function(req, res, next) {
