@@ -43,7 +43,7 @@ gulp.task('concatServerJs', function() {
 });
 
 //Watch Tasks
-gulp.task('Watch', function() {
+gulp.task('default', function() {
     gulp.watch(['./src/**/*'], ['build']);
 });
 
