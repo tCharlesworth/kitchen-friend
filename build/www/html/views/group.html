@@ -1,0 +1,22 @@
+<my-header force-auth="false"></my-header>
+
+<!--Side nav on left for list of groups
+    Content on right for a groups sections.
+    a group can have recipes, and a chat section. There
+    should also be admin section for moderating the group. As
+    well as a section to see all the group members-->
+
+
+<div class="group-nav">
+    
+    <a ui-sref="Group.Dashboard">All Groups</a>
+    <hr />
+    <div class="group-links">
+        <a ui-sref="Group.Home">Group Name</a>
+        <a ui-sref="Group.Recipes">Recipes</a>
+        <a ui-sref="Group.Members">Members</a>
+        <a ui-sref="Group.Admin">Admin</a>
+    </div>
+</div>
+
+<ui-view></ui-view>

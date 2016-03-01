@@ -92,6 +92,22 @@ button:hover {
   .page-title h1 {
     margin-bottom: 0; }
 
+.group-nav {
+  width: 200px;
+  float: left;
+  height: calc(100vh - 80px);
+  padding: 10px; }
+  .group-nav a {
+    width: 100%;
+    font-size: 1.2em;
+    display: block; }
+  .group-nav a:hover {
+    cursor: pointer; }
+  .group-nav .group-links a {
+    margin-left: 10px; }
+  .group-nav .group-links a:first-child {
+    margin-left: 0; }
+
 .myHeader {
   width: 100%;
   height: 80px;
