@@ -50,4 +50,4 @@ gulp.task('default', function() {
 //Build Task
 gulp.task('build',['concatWWWJs', 'copyHtml', 'transpileSass', 'concatServerJs'], function() {
 	console.log('*** Build Complete ***');
-});
+}); 

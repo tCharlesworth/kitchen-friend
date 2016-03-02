@@ -4,13 +4,8 @@ var Passport = require('passport'),
     User = require('mongoose').model('User');
 
 module.exports = function (app, config) {
-    //Google Authentication
-    Passport.use(new Google_Strategy({
-        clientID: config.google_Oauth.Client_Id,
-        clientSecret: config.google_Oauth.Client_Secret,
-        callbackURL: config.google_Oauth.callback,
-        scope: 'email'
-    }, function (accessToken, refreshToken, profile, done) {
+    
+    var googleFunction = function (accessToken, refreshToken, profile, done) {
         console.log('Google gave the id of: ', profile.id);
 
         //See if the user exists (Profile ID)
@@ -60,7 +55,21 @@ module.exports = function (app, config) {
                 }
             }
         });
-    }));
+    };
+    //Google Authentication
+    Passport.use(new Google_Strategy({
+        clientID: config.google_Oauth.Client_Id,
+        clientSecret: config.google_Oauth.Client_Secret,
+        callbackURL: config.google_Oauth.callback,
+        scope: 'email'
+    }, googleFunction));
+    
+    Passport.use('googleMobile', new Google_Strategy({
+        clientID: config.google_Oauth.Client_Id,
+        clientSecret: config.google_Oauth.Client_Secret,
+        callbackURL: config.google_Oauth.mobileCallback,
+        scope: 'email'
+    }, googleFunction));
     
     //Local Authentication
     Passport.use(new Local_Strategy(function (email, password, done) {
