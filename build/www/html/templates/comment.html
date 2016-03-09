@@ -1,0 +1,9 @@
+<div class="comment-container">
+    <h4>{{commentData.username || 'unknown'}}</h4>
+    <p>
+        {{commentData.message}}
+    </p>
+    <div class="date-spot">
+        {{commentData.date | date: 'MMM d, yyyy'}}
+    </div>
+</div>

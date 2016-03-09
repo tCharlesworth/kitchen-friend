@@ -23,4 +23,4 @@ var groupRecipeSchema = new Schema({
     }]
 });
 
-module.exports = mongoose.model('PublicRecipe', groupRecipeSchema);
+module.exports = mongoose.model('GroupRecipe', groupRecipeSchema);

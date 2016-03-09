@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 var GroupSchema = new Schema({
     name: {type: String},
     description: {type: String},
-    recipes: {type: [{type: Schema.Types.ObjectId, ref: 'Recipe'}], default: []},
+    recipes: {type: [{type: Schema.Types.ObjectId, ref: 'GroupRecipe'}], default: []},
     administrators: [{type: Schema.Types.ObjectId, ref: 'User'}],
     members: [{type: Schema.Types.ObjectId, ref: 'User'}]
 });

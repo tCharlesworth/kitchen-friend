@@ -3,6 +3,7 @@ var mongoose = require('mongoose'),
     PublicRecipe = require('../models/PublicRecipe'),
     User = require('../models/User'),
     Group = require('../models/Group'),
+    GroupRecipe = require('../models/GroupRecipe'),
     mongoData = {};
     
 mongoData.connectionAttempts = 0;

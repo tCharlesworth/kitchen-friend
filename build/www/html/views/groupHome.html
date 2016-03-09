@@ -1,13 +1,13 @@
 Group Home
 <h2>{{group.name}}</h2>
-
-<div class="group-links">
-    <div>
+<button ng-click="leaveGroup()">Leave Group</button>
+<div class="group-link-boxes">
+    <div ui-sref="Group.Recipes({'groupId': group._id})">
         <h2>Group Recipes</h2>
     </div>
 
-    <div>
+    <div ui-sref="Group.Members({'groupId': group._id})">
         <h2>Group Members</h2>
     </div>
-    
+     
 </div>
