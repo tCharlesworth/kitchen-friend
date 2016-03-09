@@ -18,7 +18,8 @@ module.exports = function(app) {
     
     
     app.options('/mobile/googleLogin', cors());
-    app.get('/mobile/googleLogin/callback', cors(), passport.authenticate('google', {
+    app.get('/mobile/googleLogin', cors(), passport.authenticate('googleMobile'));
+    app.get('/mobile/googleLogin/callback', cors(), passport.authenticate('googleMobile', {
         failureRedirect: 'http://localhost/failureCallback',
         successRedirect: 'http://localhost/successCallback'
     }));
