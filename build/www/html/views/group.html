@@ -9,13 +9,13 @@
 
 <div class="group-nav">
     
-    <a ui-sref="Group.Dashboard">All Groups</a>
-    <hr />
-    <div class="group-links">
-        <a ui-sref="Group.Home">Group Name</a>
-        <a ui-sref="Group.Recipes">Recipes</a>
-        <a ui-sref="Group.Members">Members</a>
-        <a ui-sref="Group.Admin">Admin</a>
+    <a class="group-links" ui-sref="Group.Dashboard">All Groups</a>
+
+    <div class="group-links" ng-repeat="group in groups">
+        <a ui-sref="Group.Home({'groupId': group._id})">{{group.name}}</a>
+        <a ui-sref="Group.Recipes({'groupId': group._id})">Recipes</a> 
+        <a ui-sref="Group.Members({'groupId': group._id})">Members</a>
+        <a ui-sref="Group.Admin({'groupId': group._id})" ng-show="checkAdmin(group)">Admin</a>
     </div>
 </div>
 

@@ -96,9 +96,15 @@ module.exports = function (app, config) {
     
     //Serialization
     Passport.serializeUser(function (user, done) {
+        if(user.auth) {
+            delete user.auth;
+        }
         done(null, user);
     });
     Passport.deserializeUser(function (obj, done) {
+        if(obj.auth) {
+            delete obj.auth;
+        }
         done(null, obj);
     });
 };

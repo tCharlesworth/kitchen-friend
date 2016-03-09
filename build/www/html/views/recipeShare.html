@@ -14,9 +14,10 @@
 </div>
 
 <div class="share-option-quick-container" ng-show="currentView != 0">
-    <div class='left' ng-click="currentView = 1" ng-class="{'selected-box': currentView === 1}">Email</div>
-    <div class='right' ng-click="currentView = 3" ng-class="{'selected-box': currentView === 3}">Public</div>
-    <div class='middle' ng-click="currentView = 2" ng-class="{'selected-box': currentView === 2}">Another User</div>
+    <div ng-click="currentView = 1" ng-class="{'selected-box': currentView === 1}">Email</div>
+    <div ng-click="currentView = 2" ng-class="{'selected-box': currentView === 2}">Another User</div>
+    <div ng-click="currentView = 3" ng-class="{'selected-box': currentView === 3}">Public</div>
+    <div ng-click="currentView = 4" ng-class="{'selected-box': currentView === 4}">Group</div>
 </div>
 
 <div class='share-email-form' ng-show="currentView === 1">
@@ -53,4 +54,10 @@
     Agree to Terms <br/>
     <button ng-click="shareRecipePublic()" ng-class='{disabled: !termsCheck}'>Share</button>
     <div class="stretch"></div>
+</div>
+
+<div class='share-email-form' ng-show="currentView === 4">
+    <h3>Share To A Group</h3>
+    <select ng-options="group.name for group in groups" ng-model="groupToShare"></select>
+    <button ng-click="shareWithGroup(groupToShare)">Share</button>
 </div>

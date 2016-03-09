@@ -7,6 +7,7 @@ var salt = BCrypt.genSaltSync(10);
 var UserSchema = new Schema({
     username: {type: String, required: true, unique: true},
     contactEmail: {type: String, unique: true},
+    picture: {type: String},
     auth: {
         local: {type: String, default: ''},
         google: {type: String, default: ''}
@@ -18,7 +19,13 @@ var UserSchema = new Schema({
         recipeId: {type: Schema.Types.ObjectId, ref: 'Recipe'}
     }],
     createdOn: {type: Date, default: Date.now()},
-    shoppingList: {type: [{type: String}], default: []}
+    shoppingList: {type: [{type: String}], default: []},
+    groups: {type: [{type: Schema.Types.ObjectId, ref: 'Group'}], default: []}, 
+    groupInvites: {type: [{
+        groupId: {type: Schema.Types.ObjectId, ref: 'Group'},
+        invitedBy: {type: Schema.Types.ObjectId, ref: 'User'},
+        dateInvited: {type: Date, default: Date.now}
+    }], default: []}
 });
 
 UserSchema.methods.hashPassword = function(password) {

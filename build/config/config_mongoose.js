@@ -2,6 +2,7 @@ var mongoose = require('mongoose'),
     Recipe = require('../models/Recipe'),
     PublicRecipe = require('../models/PublicRecipe'),
     User = require('../models/User'),
+    Group = require('../models/Group'),
     mongoData = {};
     
 mongoData.connectionAttempts = 0;

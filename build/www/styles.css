@@ -91,28 +91,54 @@ button:hover {
   margin-left: 20px; }
   .page-title h1 {
     margin-bottom: 0; }
+  .page-title h3 {
+    margin-bottom: 0;
+    display: inline-block; }
 
 .group-nav {
   width: 200px;
   float: left;
-  height: calc(100vh - 80px);
-  padding: 10px;
+  min-height: calc(100vh - 80px);
+  height: 100%;
+  padding: 10px 0px;
   box-sizing: border-box; }
   .group-nav a {
     width: 100%;
     font-size: 1.2em;
-    display: block; }
+    display: block;
+    text-decoration: none; }
   .group-nav a:hover {
     cursor: pointer; }
-  .group-nav .group-links a {
-    margin-left: 10px; }
-  .group-nav .group-links a:first-child {
-    margin-left: 0; }
+  .group-nav a {
+    padding-left: 15px;
+    color: black; }
+  .group-nav a:first-child {
+    padding-left: 5px; }
+  .group-nav .group-links {
+    margin-top: 5px;
+    border: thin solid black;
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; }
+  .group-nav .selected-group {
+    background: dodgerblue;
+    padding-left: 40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-right: thin solid gray; }
 
 .group-view {
-  width: calc(100vw - 200px);
-  float: left;
+  width: calc(100vw - 240px);
+  padding: 20px 0px;
+  float: right;
   box-sizing: border-box; }
+  .group-view .mini-group {
+    margin-top: 10px;
+    width: 200px;
+    padding-left: 10px;
+    border-left: thin solid #008517;
+    border-bottom: thin solid #008517;
+    border-bottom-left-radius: 5px; }
 
 .myHeader {
   width: 100%;
@@ -423,7 +449,14 @@ recipe-mail {
 
 .share-option-quick-container {
   width: 80%;
-  margin: auto; }
+  margin: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
   .share-option-quick-container div {
     width: 20%;
     box-sizing: border-box;
@@ -526,6 +559,30 @@ recipe-mail {
 
 .quick-menu-option-container:hover .orange {
   background: orange; }
+
+.user-preview-container {
+  width: 200px;
+  display: inline-block;
+  margin: 20px;
+  border-radius: 5px; }
+  .user-preview-container img {
+    width: 80px;
+    height: 80px;
+    float: left;
+    border-radius: 50%; }
+  .user-preview-container .user-content {
+    float: right;
+    height: 80px;
+    width: 120px; }
+    .user-preview-container .user-content .name {
+      font-size: 1em;
+      padding-top: 5px;
+      padding-left: 5px; }
+    .user-preview-container .user-content p {
+      padding: 3px 5px;
+      font-size: 0.7em; }
+  .user-preview-container .clear {
+    clear: both; }
 
 .recipe-list-wrapper {
   padding: 0 30px; }

@@ -65,6 +65,6 @@ module.exports = {
             //Not Logged In!
             return res.sendStatus(401);
         }
-        res.json(req.body);
+        res.json(req.user);
     }
 }

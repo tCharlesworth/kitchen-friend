@@ -1,0 +1,8 @@
+<div class="user-preview-container">
+    <img ng-src="{{user.picture || defaultPic}}" alt="user picture" />
+    <div class="user-content">
+        <div class="name">{{user.username}}</div>
+        <p>Member Since:<br/> {{user.createdOn | date:'MMM yyyy'}}</p>
+    </div>
+    <div class="clear"></div>
+</div>
