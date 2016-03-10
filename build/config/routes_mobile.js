@@ -20,9 +20,11 @@ module.exports = function(app) {
     app.options('/mobile/googleLogin', cors());
     app.get('/mobile/googleLogin', cors(), passport.authenticate('googleMobile'));
     app.get('/mobile/googleLogin/callback', cors(), passport.authenticate('googleMobile', {
-        failureRedirect: 'http://localhost/failureCallback',
-        successRedirect: 'http://localhost/successCallback'
-    }));
+        failureRedirect: '/#/login'
+    }), function(req, res) {
+        // Login Success!! We should have a req.user now :)
+        res.redirect('/#/load/'+req.user._id);
+    });
 };
 
 var tester = function(req, res, next) {
