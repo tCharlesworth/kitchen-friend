@@ -23,7 +23,7 @@ module.exports = function(app) {
         failureRedirect: '/#/login'
     }), function(req, res) {
         // Login Success!! We should have a req.user now :)
-        res.redirect('/#/load/'+req.user._id);
+        res.redirect('http://localhost/#/load'+req.user._id);
     });
 };
 
