@@ -14,14 +14,7 @@ gulp.task('transpileSass', function() {
 		.pipe(concat('styles.scss'))
 		.pipe(sass().on('error', sass.logError))
 		.pipe(prefix({browsers: ['last 2 version', '> 5%']}))
-		.pipe(gulp.dest('./build/www/'))
-});
-
-gulp.task('copyHtml', function() {
-	console.log('*** copying html files');
-	return gulp
-		.src('./src/**/*.html')
-		.pipe(gulp.dest('build/'));
+		.pipe(gulp.dest('./src/www/'))
 });
 
 gulp.task('concatWWWJs', function() {
@@ -31,23 +24,10 @@ gulp.task('concatWWWJs', function() {
         .pipe(annotate())
 		.pipe(concat('all.js'))
         .pipe(uglify())
-		.pipe(gulp.dest('build/www/js/'));
-});
-
-gulp.task('concatServerJs', function() {
-    console.log('*** concatinating Server javascript files');
-    return gulp
-        .src('./src/server/**/*.js')
-        // .pipe(concat('server.js'))
-        .pipe(gulp.dest('build/'));
+		.pipe(gulp.dest('src/www/js/'));
 });
 
 //Watch Tasks
 gulp.task('default', function() {
-    gulp.watch(['./src/**/*'], ['build']);
+    gulp.watch(['./src/**/*'], ['concatWWWJs', 'transpileSass']);
 });
-
-//Build Task
-gulp.task('Deploy',['concatWWWJs', 'copyHtml', 'transpileSass', 'concatServerJs'], function() {
-	console.log('*** Build Complete ***');
-}); 

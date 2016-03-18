@@ -137,7 +137,17 @@ angular.module('kitchenFriend', ['ui.router'])
                 url: '/recipe/:recipeId',
                 templateUrl: 'html/views/groupRecipeView.html',
                 controller: 'groupRecipeViewCtrl'
-            });
+            })
+        
+        .state('MobileSuccess', {
+            url: '/mobile/success',
+            templateUrl: 'html/views/mobile/loginFailure.html'
+        })
+        
+        .state('MobileFailure', {
+            url: '/mobile/failure',
+            templateUrl: 'html/views/mobile/loginSuccess.html'
+        });
 	
 	$urlRouterProvider.otherwise('/login');
 });
