@@ -1,0 +1,24 @@
+<my-header force-auth="false"></my-header>
+
+<!--Side nav on left for list of groups
+    Content on right for a groups sections.
+    a group can have recipes, and a chat section. There
+    should also be admin section for moderating the group. As
+    well as a section to see all the group members-->
+
+
+<div class="group-nav">
+    
+    <a class="group-links" ui-sref="Group.Dashboard">All Groups</a>
+
+    <div class="group-links" ng-repeat="group in groups">
+        <a ui-sref="Group.Home({'groupId': group._id})">{{group.name}}</a>
+        <a ui-sref="Group.Recipes({'groupId': group._id})">Recipes</a> 
+        <a ui-sref="Group.Members({'groupId': group._id})">Members</a>
+        <a ui-sref="Group.Admin({'groupId': group._id})" ng-show="checkAdmin(group)">Admin</a>
+    </div>
+</div>
+
+<div class="group-view">
+    <ui-view></ui-view>
+</div>

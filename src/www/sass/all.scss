@@ -1,0 +1,126 @@
+$accent-main: #008517;
+$accent-light: #00FD2C;
+
+
+body {
+	margin: 0;
+    padding: 0;
+	overflow-x: hidden;
+	font-family: 'Open Sans';
+    // padding-bottom: 20px;
+    min-width: 400px;
+}
+
+.view-container {
+    width: 80%;
+    margin: auto;
+}
+
+input[type='text'], input[type='password'], input[type='email'], input[type='number'], input[type='url'] {
+	// width: 280px;
+    width: 80%;
+	margin: 10px auto;
+	padding: 5px;
+	box-sizing: border-box;
+    display: block;
+}
+
+.stretch {
+	clear: both;
+}
+
+.almost-wide {
+    width: 75%;
+    float: left;
+}
+
+.half-wide {
+    width: 50%;
+    float: left;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.section-title-container {
+    width: 75%;
+    float: left;
+    padding-left: 10%;
+    margin-left: 5%;
+    
+    .section-title {
+        margin-bottom: 0;
+    }
+    
+    hr {
+        color: red;
+    }
+}
+
+.circle {
+    border-radius: 50%;
+    border: thin solid lightgray;
+    padding: 3px;
+}
+
+.cancel:hover {
+    color: red;
+    border-color: red;
+    cursor: pointer;
+}
+
+
+button {
+	background: #4C4C4C;
+	color: #fff;
+	border: none;
+    box-sizing: border-box;
+	border-radius: 5px;
+	text-transform: none;
+    text-decoration: none;
+	width: 280px;
+	padding: 10px;
+	box-sizing: border-box;
+	margin: 10px;
+    transition: background-color 0.7s ease;
+    transition: color 0.7s ease;
+}
+
+button a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+button:hover {
+	background: #AFAEAE;
+    color: black;
+    // outline: thin solid $accent-main;
+	cursor: pointer;
+}
+
+.disabled {
+    background-color: lightgray;
+}
+
+.disabled:hover {
+    background-color: lightgray;
+    color: red;
+}
+
+.page-title {
+    margin-left: 20px;
+    
+    h1 {
+        margin-bottom: 0;
+    }
+    
+    h3 {
+        margin-bottom: 0;
+        display: inline-block;
+    }
+}

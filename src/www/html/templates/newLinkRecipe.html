@@ -1,0 +1,15 @@
+<div class="new-user-recipe-container">
+    <h2>New Link Recipe</h2>
+    <p>Please enter the link url</p>
+    <input type="text" placeholder="url" ng-model="url"/>
+    <button ng-click="findRecipe(url)">Get Recipe</button>
+    <div ng-show="foundRecipe">
+        <input type="text" placeholder="name"/>
+        
+        
+        
+        <br/><button ng-click="saveRecipe()">Save Recipe</button>
+    </div>
+    <div ng-show="couldNotFindRecipe"></div>
+    <div ng-show="loading">Looking for recipe...</div>
+</div>

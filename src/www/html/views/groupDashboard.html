@@ -1,0 +1,12 @@
+<h1>Group Dashboard</h1>
+
+<button ui-sref="Group.Create">Create a group</button>
+<!--<button>Find a group</button>-->
+
+<h3>Your Groups</h3>
+<hr />
+
+<div ng-repeat="group in groups" class="mini-group" ui-sref="Group.Home({'groupId': group._id})">
+    <h4>{{group.name}}</h4>
+    <p>{{group.description}}</p>
+</div>

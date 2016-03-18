@@ -1,0 +1,10 @@
+<div class="recipe-preview-container">
+    <img ng-src="{{recipe.picture}}" alt="Recipe Image" ng-click="openRecipe()">
+    <h3 ng-click="openRecipe()">{{recipe.name}}</h3>
+    <hr/>
+    <p ng-if="browse || group">{{recipe.description}}</p>
+    <h4 ng-if="browse || group">{{recipe.author || recipe.submitterName || 'No Name'}}</h4>
+    <hr  ng-if="browse"/>
+    <i class="fa fa-clock-o"></i>&nbsp{{recipe.prepTime + recipe.cookTime || 0}}
+    <!--&nbsp&nbsp<i class="fa fa-cutlery"></i>-->
+</div>

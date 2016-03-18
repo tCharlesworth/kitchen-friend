@@ -1,0 +1,95 @@
+.option-container {
+    width: 80%;
+    margin: auto;
+
+    .share-option {
+        width: 25%;
+        height: 200px;
+        border: thin solid black;
+        padding: 20px;
+        
+        h3 {
+            text-align: center;
+        }
+    }
+    
+    .share-option:hover {
+        cursor: pointer;
+    }
+    
+    .middle {
+        margin: auto;
+    }
+}
+
+.share-email-form {
+    width: 80%;
+    min-width: 400px;
+    padding: 20px;
+    border: thin solid #008517;
+    border-radius: 5px;
+    margin: 20px auto;
+    
+    .share-email-one {
+        width: 50%;
+        float: left;
+    }
+    
+    textarea {
+        width: 100%;
+        clear: left;
+        resize: none;
+        box-sizing: border-box;
+    }
+    
+    .share-email-two {
+        width: 25%;
+        float: right;
+    }
+}
+
+.share-option-quick-container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    
+    div {
+        width: 20%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 3px 0;
+    }
+    
+    div:hover {
+        outline: thin solid #008517;
+        cursor: pointer;
+    }
+    
+    .middle {
+        margin: auto;
+        box-sizing: border-box;
+    }
+}
+
+.selected-box {
+    outline: thin solid gray;
+}
+
+.share-public-container {
+    width: 80%;
+    min-width: 400px;
+    padding: 20px;
+    border: thin solid #008517;
+    border-radius: 5px;
+    margin: 20px auto;
+    
+    recipe-preview {
+        float: right;
+        margin-right: 60px;
+    }
+    
+    .quick-form {
+        width: calc( 100% - 220px );
+    }
+}
